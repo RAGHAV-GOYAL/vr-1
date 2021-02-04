@@ -1,11 +1,11 @@
-//Create variables here
+
 var dog,happydDog,database,foodStock,foodS;
 
 
 
 
 function preload(){
-  //load images here
+  
   dogimg = loadImage("images/dogImg.png");
   dogimg2 = loadImage("images/dogImg1.png");
 }
@@ -15,7 +15,7 @@ function setup() {
   database = firebase.database();
   foodStock = database.ref('food');
 
-  //foodStock.on("value",readStock);
+  
   dog = createSprite(250,250,10,10);
   dog.addImage(dogimg);
   dog.scale = 0.2;
@@ -26,7 +26,7 @@ function setup() {
 function draw() {  
 background(46, 139, 87);
 if(keyWentDown(UP_ARROW)){
-  //writeStock(foodS);
+  
   dog.addImage(dogimg2);
 }
 
@@ -35,7 +35,7 @@ if(keyWentDown(UP_ARROW)){
 
 
   drawSprites();
-  //add styles here
+ 
   fill("red");
   textSize(20);
   stroke(5);
@@ -45,10 +45,10 @@ if(keyWentDown(UP_ARROW)){
   
 
 }
-function readStock(data){
+function milk(data){
   foodS=data.val();
 }
-function writeStock(x){
+function addmilk(x){
 database.ref('/').update({
   food:x
 })
